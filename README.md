@@ -79,6 +79,5 @@ flowchart LR
     E --> I[-DenvWeb=remote]
     G --> J[-DenvMobile=browserstack]
     G --> K[-DenvMobile=emulator]
-    G --> L[-DenvMobile=localDevice]
 ```
 
