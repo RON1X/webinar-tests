@@ -20,9 +20,7 @@
     - Логи консоли браузера
     - Видео выполнения автотеста
 - Возможность запуска тестов напрямую из `Allure TestOps`
-- [ Ожидается ] Интеграция с `Jira`
-- [ Ожидается ] Уведомление о результатах прохождения в `Telegram`
-
+  
 
 ## Технологии и инструменты
 <div align="center">
@@ -40,16 +38,17 @@
 <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="images/logo/Jenkins.svg" width="50"/></a>
 <a href="https://github.com/allure-framework/"><img alt="Allure Report" height="50" src="images/logo/Allure.svg" width="50"/></a>
 <a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="images/logo/Allure_TO.svg" width="50"/></a>
-<a href="https://www.atlassian.com/software/jira"><img alt="Jira" height="50" src="images/logo/Jira.svg" width="50"/></a>  
-<a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.svg" width="50"/></a>
 </div>
 
 ## Реализованные проверки
 ### Web
 - [x] Авторизация по почте и паролю
-- [x] Запуск быстрой встречи
 - [x] Изменение информации в профиле
 - [x] Выход из аккаунта
+- [x] Запуск быстрой встречи
+- [x] Запуск запланированной встречи
+- [x] Запуск постоянной встречи
+- [x] Нельзя создать встречу без названия
 
 ### Api
 - [x] Авторизация по почте и паролю
