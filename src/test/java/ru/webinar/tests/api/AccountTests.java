@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import ru.webinar.tests.TestData;
 import ru.webinar.tests.api.models.account.LoginRequestModel;
 
+import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static ru.webinar.tests.api.specs.Specs.requestSpec;
 import static ru.webinar.tests.api.specs.Specs.responseSpec;
@@ -24,13 +25,14 @@ public class AccountTests extends TestBase {
     void authorizationTest() {
         LoginRequestModel loginRequest = new LoginRequestModel(testData.email, testData.password, true);
 
-        given(requestSpec)
-                .contentType("application/x-www-form-urlencoded; charset=utf-8")
-                .body(loginRequest.convertToBody())
-                .when()
-                .post("/login")
-                .then()
-                .spec(responseSpec)
-                .statusCode(200);
+        step("Авторизоваться по почте и паролю", () ->
+                given(requestSpec)
+                        .contentType("application/x-www-form-urlencoded; charset=utf-8")
+                        .body(loginRequest.convertToBody())
+                        .when()
+                        .post("/login")
+                        .then()
+                        .spec(responseSpec)
+                        .statusCode(200));
     }
 }
