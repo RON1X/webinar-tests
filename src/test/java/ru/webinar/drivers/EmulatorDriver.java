@@ -6,7 +6,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
-import ru.webinar.config.LocalConfig;
+import ru.webinar.config.EmulatorConfig;
 
 import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
@@ -16,9 +16,9 @@ import java.io.File;
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
 import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 
-public class LocalDriver implements WebDriverProvider {
+public class EmulatorDriver implements WebDriverProvider {
 
-    LocalConfig config = ConfigFactory.create(LocalConfig.class, System.getProperties());
+    EmulatorConfig config = ConfigFactory.create(EmulatorConfig.class, System.getProperties());
 
     @Nonnull
     @Override

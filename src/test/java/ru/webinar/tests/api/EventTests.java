@@ -1,5 +1,6 @@
 package ru.webinar.tests.api;
 
+import org.junit.jupiter.api.DisplayName;
 import ru.webinar.tests.TestData;
 import ru.webinar.tests.api.api.EventApi;
 import ru.webinar.tests.api.api.UserApi;
@@ -24,6 +25,7 @@ public class EventTests extends TestBase {
 
     @Test
     @Tag("api")
+    @DisplayName("Создание шаблона для мероприятия")
     void createEventTemplateTest() {
         CreateEventTemplateRequestModel.AccessSettingsModel accessSettings = new CreateEventTemplateRequestModel.AccessSettingsModel(false, false, false);
         CreateEventTemplateRequestModel createEventTemplateRequest = new CreateEventTemplateRequestModel("New Event", accessSettings);
@@ -41,6 +43,7 @@ public class EventTests extends TestBase {
 
     @Test
     @Tag("api")
+    @DisplayName("Создание быстрой встречи")
     void createEventTest() {
         CreateEventTemplateRequestModel.AccessSettingsModel accessSettings = new CreateEventTemplateRequestModel.AccessSettingsModel(false, false, false);
         CreateEventTemplateRequestModel createEventTemplateRequest = new CreateEventTemplateRequestModel("New Event", accessSettings);
@@ -64,6 +67,7 @@ public class EventTests extends TestBase {
 
     @Test
     @Tag("api")
+    @DisplayName("Удаление мероприятия")
     void deleteEvent() {
         CreateEventTemplateRequestModel.AccessSettingsModel accessSettings = new CreateEventTemplateRequestModel.AccessSettingsModel(false, false, false);
         CreateEventTemplateRequestModel createEventTemplateRequest = new CreateEventTemplateRequestModel("New Event", accessSettings);

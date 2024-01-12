@@ -1,5 +1,6 @@
 package ru.webinar.tests.api;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.webinar.tests.TestData;
@@ -15,6 +16,7 @@ public class AccountTests extends TestBase {
 
     @Test
     @Tag("api")
+    @DisplayName("Авторизация по почте и паролю")
     void authorizationTest() {
         LoginRequestModel loginRequest = new LoginRequestModel(testData.email, testData.password, true);
 

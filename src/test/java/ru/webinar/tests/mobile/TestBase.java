@@ -7,7 +7,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import ru.webinar.drivers.BrowserstackDriver;
-import ru.webinar.drivers.LocalDriver;
+import ru.webinar.drivers.EmulatorDriver;
+import ru.webinar.helpers.Attach;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -16,10 +17,10 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         if (System.getProperty("envMobile")==null) {
-            Configuration.browser = LocalDriver.class.getName();
+            Configuration.browser = BrowserstackDriver.class.getName();
         }
-        else if (System.getProperty("envMobile").equals("local")) {
-            Configuration.browser = LocalDriver.class.getName();
+        else if (System.getProperty("envMobile").equals("emulator")) {
+            Configuration.browser = EmulatorDriver.class.getName();
         } else {
             Configuration.browser = BrowserstackDriver.class.getName();
         }
@@ -35,6 +36,12 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
+        Attach.pageSource();
+        if (System.getProperty("envMobile") != null) {
+            if (System.getProperty("envMobile").equals("browserstack")) {
+                Attach.addVideo(sessionId().toString());
+            }
+        }
         closeWebDriver();
     }
 }

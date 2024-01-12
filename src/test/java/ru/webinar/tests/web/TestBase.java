@@ -11,6 +11,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import ru.webinar.helpers.Attach;
 
 import java.util.Map;
 
@@ -51,6 +52,9 @@ public class TestBase {
 
     @AfterEach
     void afterEach() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.addVideo();
         closeWebDriver();
     }
 }
