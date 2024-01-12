@@ -24,7 +24,6 @@ import static ru.webinar.tests.api.specs.Specs.responseSpec;
 @Tag("api")
 public class AccountTests extends TestBase {
 
-    EventApi eventApi = new EventApi();
     UserApi userApi = new UserApi();
     TestData testData = new TestData();
     LoginRequestModel loginRequest = new LoginRequestModel(testData.email, testData.password, true);
