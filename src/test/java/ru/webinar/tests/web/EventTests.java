@@ -1,6 +1,8 @@
 package ru.webinar.tests.web;
 
 import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import ru.webinar.pages.web.EventPage;
 import ru.webinar.tests.TestData;
@@ -30,6 +32,7 @@ public class EventTests extends TestBase {
     @Test
     @WithLogin
     @DisplayName("Запуск быстрой встречи")
+    @Severity(SeverityLevel.BLOCKER)
     void createFastMeetingTest() {
         eventPage.openPage("/meetings")
                 .clickStartFastMeetingButton()
@@ -37,5 +40,49 @@ public class EventTests extends TestBase {
                 .clickJoinMeetingButton()
                 .checkVCSVisible()
                 .deleteEvent(sessionId, new DeleteEventRequestModel(false), getEventIdFromUrl(getWebDriver().getCurrentUrl()));
+    }
+
+    @Test
+    @WithLogin
+    @DisplayName("Запуск запланированной встречи")
+    @Severity(SeverityLevel.BLOCKER)
+    void  createScheduleMeetingTest() {
+        eventPage.openPage("/meetings")
+                .clickScheduleButton()
+                .clickScheduleMeetingButton()
+                .clickGoToEventButton()
+                .clickStartMeetingButtonButton()
+                .checkPublisherVisible()
+                .clickJoinMeetingButton()
+                .checkVCSVisible()
+                .deleteEvent(sessionId, new DeleteEventRequestModel(false), getEventIdFromUrl(getWebDriver().getCurrentUrl()));
+    }
+
+    @Test
+    @WithLogin
+    @DisplayName("Запуск постоянной встречи")
+    @Severity(SeverityLevel.BLOCKER)
+    void  createScheduleEndlessMeetingTest() {
+        eventPage.openPage("/meetings")
+                .clickScheduleButton()
+                .clickScheduleEndlessMeetingButton()
+                .clickGoToEventButton()
+                .checkPublisherVisible()
+                .clickJoinMeetingButton()
+                .checkVCSVisible()
+                .deleteEvent(sessionId, new DeleteEventRequestModel(false), getEventIdFromUrl(getWebDriver().getCurrentUrl()));
+    }
+
+    @Test
+    @WithLogin
+    @DisplayName("Нельзя создать встречу без названия")
+    @Severity(SeverityLevel.BLOCKER)
+    void  errorCreateMeetingWithOutNameTest() {
+        eventPage.openPage("/meetings")
+                .clickScheduleButton()
+                .clickScheduleMeetingButton()
+                .clearNameEventInput()
+                .clickGoToEventButton()
+                .checkErrorNameEventMessage();
     }
 }

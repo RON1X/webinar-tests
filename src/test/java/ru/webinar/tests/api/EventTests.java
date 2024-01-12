@@ -2,6 +2,8 @@ package ru.webinar.tests.api;
 
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import ru.webinar.tests.TestData;
 import ru.webinar.tests.api.api.EventApi;
@@ -31,6 +33,7 @@ public class EventTests extends TestBase {
 
     @Test
     @DisplayName("Создание шаблона для мероприятия")
+    @Severity(SeverityLevel.BLOCKER)
     void createEventTemplateTest() {
         CreateEventTemplateRequestModel.AccessSettingsModel accessSettings = new CreateEventTemplateRequestModel.AccessSettingsModel(false, false, false);
         CreateEventTemplateRequestModel createEventTemplateRequest = new CreateEventTemplateRequestModel("New Event", accessSettings);
@@ -49,6 +52,7 @@ public class EventTests extends TestBase {
 
     @Test
     @DisplayName("Создание быстрой встречи")
+    @Severity(SeverityLevel.BLOCKER)
     void createEventTest() {
         CreateEventTemplateRequestModel.AccessSettingsModel accessSettings = new CreateEventTemplateRequestModel.AccessSettingsModel(false, false, false);
         CreateEventTemplateRequestModel createEventTemplateRequest = new CreateEventTemplateRequestModel("New Event", accessSettings);
@@ -75,6 +79,7 @@ public class EventTests extends TestBase {
 
     @Test
     @DisplayName("Удаление мероприятия")
+    @Severity(SeverityLevel.CRITICAL)
     void deleteEvent() {
         CreateEventTemplateRequestModel.AccessSettingsModel accessSettings = new CreateEventTemplateRequestModel.AccessSettingsModel(false, false, false);
         CreateEventTemplateRequestModel createEventTemplateRequest = new CreateEventTemplateRequestModel("New Event", accessSettings);

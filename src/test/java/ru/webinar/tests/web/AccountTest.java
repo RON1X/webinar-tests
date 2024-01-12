@@ -2,6 +2,8 @@ package ru.webinar.tests.web;
 
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import ru.webinar.pages.web.AuthorizationPage;
@@ -24,6 +26,7 @@ public class AccountTest extends TestBase {
 
     @Test
     @DisplayName("Авторизация по почте и паролю")
+    @Severity(SeverityLevel.BLOCKER)
     void authorizationTest() {
         authorizationPage.openPage("/signin")
                 .setEmail(testData.email)
@@ -35,6 +38,7 @@ public class AccountTest extends TestBase {
     @Test
     @WithLogin
     @DisplayName("Изменение информации в профиле")
+    @Severity(SeverityLevel.NORMAL)
     void changeProfileDataTest() {
         toolbarPage.openPage("/meetings")
                 .clickAvatar()
@@ -58,6 +62,7 @@ public class AccountTest extends TestBase {
     @Test
     @WithLogin
     @DisplayName("Выход из аккаунта")
+    @Severity(SeverityLevel.CRITICAL)
     void logoutTest() {
         toolbarPage.openPage("/meetings")
                 .clickAvatar()
