@@ -1,4 +1,4 @@
-<h1>Проект автоматизации тестирования <a target="_blank" href="https://mts-link.ru/#form"> МТС Линк </a> </h1>
+<div align="center"> <h1> Проект автоматизации тестирования <a target="_blank" href="https://mts-link.ru/#form"> МТС Линк </a> </h1> </div>
 
 <p align="center">
 <img src="images/logo/mts-link-logo.png">
