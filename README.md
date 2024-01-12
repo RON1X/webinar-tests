@@ -86,7 +86,7 @@ flowchart LR
 
 <img src="images/screenshots/jenkins.png">
 
-## Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/job/022-eachubkov-hw27/8/allure/">Allure Report</a></b>
+## Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/job/022-eachubkov-hw27/9/allure/">Allure Report</a></b>
 
 <img src="images/screenshots/allure_report.png">
 
