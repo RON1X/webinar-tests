@@ -11,7 +11,6 @@ import ru.webinar.pages.mobile.AccountPage;
 import ru.webinar.pages.mobile.StartScreenPage;
 import ru.webinar.tests.TestData;
 
-
 @Epic("Android")
 @Feature("Личный кабинет")
 @Tag("android")

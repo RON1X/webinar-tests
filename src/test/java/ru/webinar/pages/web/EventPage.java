@@ -13,8 +13,6 @@ public class EventPage extends PageBase {
 
     EventApi eventApi = new EventApi();
 
-    //Meetings.Toolbar.scheduleEndlessMeeting
-
     SelenideElement
             startFastMeetingButton = $(byAttribute("data-testid", "Meetings.Toolbar.startMeeting")),
             scheduleButton = $(byAttribute("data-testid", "Meetings.Toolbar.schedule")),
