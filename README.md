@@ -96,7 +96,7 @@ flowchart LR
 
 ## Пример выполнения теста в Selenoid
 
-> К каждому UI-тесту в отчете прилагается видео
+> К каждому Web UI-тесту в отчете прилагается видео
 <p align="center">
   <img src="images/video/web-test.gif">
 </p>
