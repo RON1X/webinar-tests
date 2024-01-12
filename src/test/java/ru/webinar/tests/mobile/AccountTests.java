@@ -11,6 +11,8 @@ import ru.webinar.pages.mobile.AccountPage;
 import ru.webinar.pages.mobile.StartScreenPage;
 import ru.webinar.tests.TestData;
 
+import static io.qameta.allure.Allure.step;
+
 @Epic("Android")
 @Feature("Личный кабинет")
 @Tag("android")
@@ -49,5 +51,14 @@ public class AccountTests extends TestBase {
                 .checkOpenAuthorizationButtonVisible()
                 .checkOpenAuthorizationWithSsoButtonVisible()
                 .checkOpenRegistrationButtonVisible();
+    }
+
+    @Test
+    @DisplayName("Создание быстрой встречи")
+    @Severity(SeverityLevel.CRITICAL)
+    void createFastMeetingTest() {
+        step("Открыть календарь");
+        step("Нажать Создать встречу");
+        step("Выйти в эфир");
     }
 }
