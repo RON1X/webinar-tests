@@ -1,5 +1,7 @@
 package ru.webinar.tests.api;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import ru.webinar.tests.TestData;
 import ru.webinar.tests.api.api.EventApi;
@@ -15,6 +17,9 @@ import static ru.webinar.tests.api.specs.Specs.requestSpec;
 import static ru.webinar.tests.api.specs.Specs.responseSpec;
 import static io.restassured.RestAssured.given;
 
+@Epic("Api")
+@Feature("Мероприятия")
+@Tag("api")
 public class EventTests extends TestBase {
 
     EventApi eventApi = new EventApi();
@@ -24,7 +29,6 @@ public class EventTests extends TestBase {
     String sessionId = userApi.getSessionId(loginRequest);
 
     @Test
-    @Tag("api")
     @DisplayName("Создание шаблона для мероприятия")
     void createEventTemplateTest() {
         CreateEventTemplateRequestModel.AccessSettingsModel accessSettings = new CreateEventTemplateRequestModel.AccessSettingsModel(false, false, false);
@@ -42,7 +46,6 @@ public class EventTests extends TestBase {
     }
 
     @Test
-    @Tag("api")
     @DisplayName("Создание быстрой встречи")
     void createEventTest() {
         CreateEventTemplateRequestModel.AccessSettingsModel accessSettings = new CreateEventTemplateRequestModel.AccessSettingsModel(false, false, false);
@@ -66,7 +69,6 @@ public class EventTests extends TestBase {
     }
 
     @Test
-    @Tag("api")
     @DisplayName("Удаление мероприятия")
     void deleteEvent() {
         CreateEventTemplateRequestModel.AccessSettingsModel accessSettings = new CreateEventTemplateRequestModel.AccessSettingsModel(false, false, false);

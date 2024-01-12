@@ -1,6 +1,7 @@
 package ru.webinar.tests.web;
 
 import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import ru.webinar.pages.web.AuthorizationPage;
@@ -10,8 +11,9 @@ import ru.webinar.tests.TestData;
 import ru.webinar.tests.api.extensions.WithLogin;
 import org.junit.jupiter.api.Test;
 
+@Epic("Web")
+@Feature("Личный кабинет")
 @Tag("web")
-@Epic("Личный кабинет")
 public class AccountTest extends TestBase {
 
     AuthorizationPage authorizationPage = new AuthorizationPage();

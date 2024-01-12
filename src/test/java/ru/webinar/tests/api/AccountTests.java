@@ -1,5 +1,7 @@
 package ru.webinar.tests.api;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -10,12 +12,14 @@ import static io.restassured.RestAssured.given;
 import static ru.webinar.tests.api.specs.Specs.requestSpec;
 import static ru.webinar.tests.api.specs.Specs.responseSpec;
 
+@Epic("Api")
+@Feature("Личный кабинет")
+@Tag("api")
 public class AccountTests extends TestBase {
 
     TestData testData = new TestData();
 
     @Test
-    @Tag("api")
     @DisplayName("Авторизация по почте и паролю")
     void authorizationTest() {
         LoginRequestModel loginRequest = new LoginRequestModel(testData.email, testData.password, true);

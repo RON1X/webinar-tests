@@ -1,5 +1,6 @@
 package ru.webinar.tests.web;
 
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import ru.webinar.pages.web.EventPage;
 import ru.webinar.tests.TestData;
@@ -14,8 +15,9 @@ import ru.webinar.tests.api.models.event.DeleteEventRequestModel;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static ru.webinar.utils.Helpers.getEventIdFromUrl;
 
+@Epic("Web")
+@Feature("Быстрая встреча")
 @Tag("web")
-@Epic("Быстрая встреча")
 public class EventTests extends TestBase {
 
     UserApi userApi = new UserApi();

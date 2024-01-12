@@ -1,5 +1,7 @@
 package ru.webinar.tests.mobile;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -7,6 +9,9 @@ import ru.webinar.pages.mobile.AccountPage;
 import ru.webinar.pages.mobile.StartScreenPage;
 import ru.webinar.tests.TestData;
 
+
+@Epic("Android")
+@Feature("Личный кабинет")
 @Tag("android")
 public class AccountTests extends TestBase {
 
