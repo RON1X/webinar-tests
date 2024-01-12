@@ -81,11 +81,19 @@ flowchart LR
     G --> K[-DenvMobile=emulator]
 ```
 
-## Cборка тестов в <b><a target="_blank" href="">Jenkins</a></b>
+## Cборка тестов в <b><a target="_blank" href="https://jenkins.autotests.cloud/job/022-eachubkov-hw27/">Jenkins</a></b>
 
-## Интеграция с <b><a target="_blank" href="">Allure TestOps</a></b>
+>Для запуска сборки необходимо перейти в раздел `Build with Parameters` и нажать кнопку `Build`
 
-## Интеграция с <b><a target="_blank" href="">Allure TestOps</a></b>
+<img src="images/screenshots/jenkins.png">
+
+## Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/job/022-eachubkov-hw27/8/allure/">Allure Report</a></b>
+
+<img src="images/screenshots/allure_report.png">
+
+## Интеграция с <b><a target="_blank" href="https://allure.autotests.cloud/project/3960/dashboards">Allure TestOps</a></b>
+
+<img src="images/screenshots/allure_testops.png">
 
 ## Пример выполнения теста в Selenoid
 
