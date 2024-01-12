@@ -93,14 +93,6 @@ public class EventTests extends TestBase {
                 eventApi.createEvent(sessionId, createEventRequest, eventId));
 
         step("Удалить мероприятие", () ->
-                given(requestSpec)
-                        .cookie("sessionId", sessionId)
-                        .contentType("application/x-www-form-urlencoded; charset=UTF-8")
-                        .body(deleteEventRequest.convertToBody())
-                        .when()
-                        .delete("/event/"+eventId)
-                        .then()
-                        .spec(responseSpec)
-                        .statusCode(204));
+                eventApi.deleteEvent(sessionId, deleteEventRequest, eventId));
     }
 }
