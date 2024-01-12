@@ -81,3 +81,22 @@ flowchart LR
     G --> K[-DenvMobile=emulator]
 ```
 
+## Cборка тестов в <b><a target="_blank" href="">Jenkins</a></b>
+
+## Интеграция с <b><a target="_blank" href="">Allure TestOps</a></b>
+
+## Интеграция с <b><a target="_blank" href="">Allure TestOps</a></b>
+
+## Пример выполнения теста в Selenoid
+
+> К каждому UI-тесту в отчете прилагается видео
+<p align="center">
+  <img src="images/video/web-test.gif">
+</p>
+
+## Пример выполнения теста в Browserstack
+
+> К каждому мобильному тесту, выполняемому в Browserstack, в отчете прилагается видео
+<p align="center">
+  <img src="images/video/mobile-test.gif">
+</p>
