@@ -1,0 +1,17 @@
+{
+  "base": {
+    "logo": "",
+    "project": "qa.guru-lesson",
+    "environment": "PROD",
+    "comment": "any comment here @eachubkov",
+    "reportLink": "https://qa.guru",
+    "language": "ru",
+    "allureFolder": "build/allure-results/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "6773692433:AAGgk3iK7Uyf-DXZFOc2uXqBO4ue8ui3PhU",
+    "chat": "-655949603",
+    "replyTo": ""
+  }
+}
