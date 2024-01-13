@@ -11,8 +11,6 @@ import ru.webinar.pages.mobile.AccountPage;
 import ru.webinar.pages.mobile.StartScreenPage;
 import ru.webinar.tests.TestData;
 
-import static io.qameta.allure.Allure.step;
-
 @Epic("Android")
 @Feature("Личный кабинет")
 @Tag("android")

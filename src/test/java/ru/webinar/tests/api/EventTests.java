@@ -47,7 +47,7 @@ public class EventTests extends TestBase {
                         .then()
                         .spec(responseSpec)
                         .statusCode(201))
-                        .extract().as(CreateEventTemplateResponseModel.class);
+                .extract().as(CreateEventTemplateResponseModel.class);
 
         step("Проверить данные в ответе", () -> {
             assertEquals(testData.eventName, response.getName());
@@ -73,11 +73,11 @@ public class EventTests extends TestBase {
                         .contentType("application/json")
                         .body(createEventRequest)
                         .when()
-                        .post("/event/"+eventId+"/session")
+                        .post("/event/" + eventId + "/session")
                         .then()
                         .spec(responseSpec)
                         .statusCode(201))
-                        .extract().as(CreateEventResponseModel.class);
+                .extract().as(CreateEventResponseModel.class);
 
         step("Проверить данные в ответе", () -> {
             assertEquals(testData.eventName, response.getName());

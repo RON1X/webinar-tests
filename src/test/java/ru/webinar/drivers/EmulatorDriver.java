@@ -7,6 +7,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import ru.webinar.config.EmulatorConfig;
+
 import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URL;

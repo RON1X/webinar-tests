@@ -27,7 +27,7 @@ public class EventApi {
                 .contentType("application/json")
                 .body(createEventRequest)
                 .when()
-                .post("/event/"+eventId+"/session")
+                .post("/event/" + eventId + "/session")
                 .then()
                 .spec(responseSpec)
                 .statusCode(201);
@@ -39,7 +39,7 @@ public class EventApi {
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .body(deleteEventRequest.convertToBody())
                 .when()
-                .delete("/event/"+eventId)
+                .delete("/event/" + eventId)
                 .then()
                 .spec(responseSpec)
                 .statusCode(204);
