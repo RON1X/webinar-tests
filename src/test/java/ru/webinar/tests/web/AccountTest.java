@@ -56,7 +56,13 @@ public class AccountTest extends TestBase {
         toolbarPage.clickAvatar()
                 .clickProfile();
 
-        profilePage.checkSuccessfulChangeProfileData(testData.name, testData.secondName, testData.nickname, testData.phone, testData.organization, testData.position, testData.description);
+        profilePage.checkName(testData.name)
+                .checkSecondName(testData.secondName)
+                .checkNickname(testData.nickname)
+                .checkPhone(testData.phone)
+                .checkOrganization(testData.organization)
+                .checkPosition(testData.position)
+                .checkDescription(testData.description);
     }
 
     @Test

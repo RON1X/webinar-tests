@@ -5,12 +5,11 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.webdriver;
 import static io.appium.java_client.AppiumBy.id;
 
 public class AccountPage {
 
-    SelenideElement
+    private final SelenideElement
             startMeetingButton = $(id("ru.webinar.mobile:id/btnStartMeeting")),
             avatar = $(id("ru.webinar.mobile:id/avatar")),
             signOutButton = $(id("ru.webinar.mobile:id/btnExit")),
