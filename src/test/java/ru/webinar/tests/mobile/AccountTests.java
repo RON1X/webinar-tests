@@ -45,7 +45,7 @@ public class AccountTests extends TestBase {
                 .clickSignIn();
 
         accountPage.clickAvatar()
-ad                .clickSignOut();
+                .clickSignOut();
 
         startScreenPage
                 .checkOpenAuthorizationButtonVisible()
