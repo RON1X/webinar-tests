@@ -44,7 +44,7 @@ public class EmulatorDriver implements WebDriverProvider {
     }
 
     private String getAppPath() {
-        File app = new File("src/test/resources/apps/"+config.getAppVersion());
+        File app = new File("src/test/resources/apps/" + config.getAppVersion());
         return app.getAbsolutePath();
     }
 }

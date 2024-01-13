@@ -8,14 +8,13 @@ import org.junit.jupiter.api.DisplayName;
 import ru.webinar.tests.TestData;
 import ru.webinar.tests.api.api.EventApi;
 import ru.webinar.tests.api.api.UserApi;
-import ru.webinar.tests.api.models.event.CreateEventRequestModel;
-import ru.webinar.tests.api.models.event.CreateEventTemplateRequestModel;
-import ru.webinar.tests.api.models.event.DeleteEventRequestModel;
+import ru.webinar.tests.api.models.event.*;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.webinar.tests.api.models.account.LoginRequestModel;
 
 import static io.qameta.allure.Allure.step;
+import static org.junit.jupiter.api.Assertions.*;
 import static ru.webinar.tests.api.specs.Specs.requestSpec;
 import static ru.webinar.tests.api.specs.Specs.responseSpec;
 import static io.restassured.RestAssured.given;
@@ -36,9 +35,9 @@ public class EventTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     void createEventTemplateTest() {
         CreateEventTemplateRequestModel.AccessSettingsModel accessSettings = new CreateEventTemplateRequestModel.AccessSettingsModel(false, false, false);
-        CreateEventTemplateRequestModel createEventTemplateRequest = new CreateEventTemplateRequestModel("New Event", accessSettings);
+        CreateEventTemplateRequestModel createEventTemplateRequest = new CreateEventTemplateRequestModel(testData.eventName, accessSettings);
 
-        step("Создать шаблон для мероприятия", () ->
+        CreateEventTemplateResponseModel response = step("Создать шаблон для мероприятия", () ->
                 given(requestSpec)
                         .cookie("sessionId", sessionId)
                         .contentType("application/json")
@@ -47,7 +46,13 @@ public class EventTests extends TestBase {
                         .post("/event")
                         .then()
                         .spec(responseSpec)
-                        .statusCode(201));
+                        .statusCode(201))
+                        .extract().as(CreateEventTemplateResponseModel.class);
+
+        step("Проверить данные в ответе", () -> {
+            assertEquals(testData.eventName, response.getName());
+            assertEquals("meeting", response.getType());
+        });
     }
 
     @Test
@@ -55,14 +60,14 @@ public class EventTests extends TestBase {
     @Severity(SeverityLevel.BLOCKER)
     void createEventTest() {
         CreateEventTemplateRequestModel.AccessSettingsModel accessSettings = new CreateEventTemplateRequestModel.AccessSettingsModel(false, false, false);
-        CreateEventTemplateRequestModel createEventTemplateRequest = new CreateEventTemplateRequestModel("New Event", accessSettings);
+        CreateEventTemplateRequestModel createEventTemplateRequest = new CreateEventTemplateRequestModel(testData.eventName, accessSettings);
         CreateEventRequestModel createEventRequest = new CreateEventRequestModel("2023-11-02T11:06:04+0300", 100, true, "google_calendar", accessSettings);
         DeleteEventRequestModel deleteEventRequest = new DeleteEventRequestModel(false);
 
         String eventId = step("Создать шаблон для быстрой встречи", () ->
                 eventApi.getEventId(sessionId, createEventTemplateRequest));
 
-        step("Создать быструю встречу", () ->
+        CreateEventResponseModel response = step("Создать быструю встречу", () ->
                 given(requestSpec)
                         .cookie("sessionId", sessionId)
                         .contentType("application/json")
@@ -71,7 +76,14 @@ public class EventTests extends TestBase {
                         .post("/event/"+eventId+"/session")
                         .then()
                         .spec(responseSpec)
-                        .statusCode(201));
+                        .statusCode(201))
+                        .extract().as(CreateEventResponseModel.class);
+
+        step("Проверить данные в ответе", () -> {
+            assertEquals(testData.eventName, response.getName());
+            assertEquals("meeting", response.getType());
+            assertEquals("ACTIVE", response.getStatus());
+        });
 
         step("Удалить быструю встречу", () ->
                 eventApi.deleteEvent(sessionId, deleteEventRequest, eventId));

@@ -20,5 +20,6 @@ public class TestData {
             description = "1) Character - " + faker.gameOfThrones().character() +
                     " 2) City - " + faker.gameOfThrones().city() +
                     " 3) Dragon - " + faker.gameOfThrones().dragon() +
-                    " 4) House - " + faker.gameOfThrones().house();
+                    " 4) House - " + faker.gameOfThrones().house(),
+            eventName = faker.cat().name();
 }
