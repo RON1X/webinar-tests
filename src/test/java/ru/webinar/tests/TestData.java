@@ -21,5 +21,5 @@ public class TestData {
                     " 2) City - " + faker.gameOfThrones().city() +
                     " 3) Dragon - " + faker.gameOfThrones().dragon() +
                     " 4) House - " + faker.gameOfThrones().house(),
-            eventName = faker.cat().name();
+            eventName = faker.harryPotter().spell();
 }
