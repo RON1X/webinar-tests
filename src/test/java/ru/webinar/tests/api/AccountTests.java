@@ -46,7 +46,7 @@ public class AccountTests extends TestBase {
     @Test
     @DisplayName("Выход из аккаунта")
     @Severity(SeverityLevel.BLOCKER)
-    void getUserDataTest() {
+    void logoutTest() {
         step("Выйти из аккаунта", () ->
                 given(requestSpec)
                         .cookie("sessionId", sessionId)
