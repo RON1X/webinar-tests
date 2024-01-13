@@ -20,6 +20,8 @@
     - Логи консоли браузера
     - Видео выполнения автотеста
 - Возможность запуска тестов напрямую из `Allure TestOps`
+- Интеграция с `Jira`
+- Уведомление о результатах прохождения в `Telegram`
   
 
 ## Технологии и инструменты
@@ -38,6 +40,8 @@
 <a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="images/logo/Jenkins.svg" width="50"/></a>
 <a href="https://github.com/allure-framework/"><img alt="Allure Report" height="50" src="images/logo/Allure.svg" width="50"/></a>
 <a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="images/logo/Allure_TO.svg" width="50"/></a>
+<a href="https://www.atlassian.com/software/jira"><img alt="Jira" height="50" src="images/logo/Jira.svg" width="50"/></a>  
+<a href="https://telegram.org/"><img alt="Telegram" height="50" src="images/logo/Telegram.svg" width="50"/></a>
 </div>
 
 ## Реализованные проверки
@@ -95,6 +99,11 @@ flowchart LR
 ## Интеграция с <b><a target="_blank" href="https://allure.autotests.cloud/project/3960/dashboards">Allure TestOps</a></b>
 
 <img src="images/screenshots/allure_testops.png">
+
+## Уведомления в Telegram с использованием бота
+
+> Бот после завершения сборки отправляет сообщение с отчетом о прохождении тестов
+<img src="images/screenshots/tg.png">
 
 ## Пример выполнения теста в Selenoid
 
