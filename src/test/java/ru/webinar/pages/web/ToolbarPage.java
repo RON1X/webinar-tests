@@ -11,7 +11,7 @@ import static com.codeborne.selenide.WebDriverConditions.url;
 
 public class ToolbarPage {
 
-    SelenideElement
+    private final SelenideElement
             emailInput = $(byName("email")),
             passwordInput = $(byName("password")),
             submitButton = $(byAttribute("data-testid", "SignIn.action.submit")),

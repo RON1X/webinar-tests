@@ -26,6 +26,8 @@ public class BrowserstackDriver implements WebDriverProvider {
         caps.setCapability("app", config.getApp());
         caps.setCapability("device", config.getDevice());
         caps.setCapability("os_version", config.getOSVersion());
+        caps.setCapability("unicodeKeyboard", true);
+        caps.setCapability("resetKeyboard", true);
         caps.setCapability("project", "Webinar");
         caps.setCapability("build", "browserstack-build-1");
         caps.setCapability("name", "first_test");

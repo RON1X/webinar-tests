@@ -45,7 +45,7 @@ public class AccountTests extends TestBase {
                 .clickSignIn();
 
         accountPage.clickAvatar()
-                .clickSignOutButton();
+ad                .clickSignOut();
 
         startScreenPage
                 .checkOpenAuthorizationButtonVisible()
@@ -54,11 +54,29 @@ public class AccountTests extends TestBase {
     }
 
     @Test
-    @DisplayName("Создание быстрой встречи")
+    @DisplayName("Редактирование профиля")
     @Severity(SeverityLevel.CRITICAL)
-    void createFastMeetingTest() {
-        step("Открыть календарь");
-        step("Нажать Создать встречу");
-        step("Выйти в эфир");
+    void editProfileTest() {
+        startScreenPage.clickOpenAuthorizationButton()
+                .setEmail(testData.email)
+                .setPassword(testData.password)
+                .clickSignIn();
+
+        accountPage.clickAvatar()
+                .clickEditProfile()
+                .setFirstName(testData.name)
+                .setSecondName(testData.secondName)
+                .setNickname(testData.nickname)
+                .setCompany(testData.organization)
+                .setPosition(testData.position)
+                .setPhone(testData.phone)
+                .clickSave()
+                .clickEditProfile()
+                .checkFirstName(testData.name)
+                .checkSecondName(testData.secondName)
+                .checkNickname(testData.nickname)
+                .checkCompany(testData.organization)
+                .checkPosition(testData.position)
+                .checkPhone(testData.phone);
     }
 }

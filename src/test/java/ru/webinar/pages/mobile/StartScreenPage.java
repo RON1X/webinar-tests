@@ -9,7 +9,7 @@ import static io.appium.java_client.AppiumBy.id;
 
 public class StartScreenPage {
 
-    SelenideElement
+    private final SelenideElement
             openAuthorizationButton = $(id("ru.webinar.mobile:id/btnSignIn")),
             openAuthorizationWithSsoButton = $(id("ru.webinar.mobile:id/btnSsoSignIn")),
             openRegistrationButton = $(id("ru.webinar.mobile:id/btnSignUp")),

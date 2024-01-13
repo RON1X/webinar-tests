@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class AuthorizationPage {
 
-    SelenideElement
+    private final SelenideElement
             emailInput = $(byName("email")),
             passwordInput = $(byName("password")),
             submitButton = $(byAttribute("data-testid", "SignIn.action.submit")),

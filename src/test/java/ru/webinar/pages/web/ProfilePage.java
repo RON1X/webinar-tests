@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ProfilePage extends PageBase {
 
-    SelenideElement
+    private final SelenideElement
             nameInput = $(byName("name")),
             secondNameInput = $(byName("secondName")),
             nicknameInput = $(byName("nickname")),
