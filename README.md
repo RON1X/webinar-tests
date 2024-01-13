@@ -60,7 +60,7 @@
 ### Mobile
 - [x] Авторизация по почте и паролю
 - [x] Выход из аккаунта
-- [ ] Создание быстрой встречи
+- [x] Редактирование профиля
 
 # Запуск тестов
 Все настройки лежат в папке `resources` в файлах `.properties`. <br/>
@@ -88,7 +88,7 @@ flowchart LR
 
 <img src="images/screenshots/jenkins.png">
 
-## Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/job/022-eachubkov-hw27/9/allure/">Allure Report</a></b>
+## Интеграция с <b><a target="_blank" href="https://jenkins.autotests.cloud/job/022-eachubkov-hw27/allure/">Allure Report</a></b>
 
 <img src="images/screenshots/allure_report.png">
 
